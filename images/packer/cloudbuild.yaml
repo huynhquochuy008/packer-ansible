@@ -12,7 +12,7 @@ steps:
       'build',
       '-t',
       '${_REPOSITOY}/packer:${_PACKER_VERSION}',
-      '.'
+      './images/packer'
     ]
 
   - name: 'gcr.io/cloud-builders/docker'
