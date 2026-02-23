@@ -3,7 +3,7 @@ steps:
     args:
       - '-c'
       - |
-        wget https://releases.hashicorp.com/packer/${_PACKER_VERSION}/packer_${_PACKER_VERSION}_linux_amd64.zip
+        wget -P ./images/packer https://releases.hashicorp.com/packer/${_PACKER_VERSION}/packer_${_PACKER_VERSION}_linux_amd64.zip
         pwd
         ls -al
 
