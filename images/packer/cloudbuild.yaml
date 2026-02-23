@@ -4,7 +4,6 @@ steps:
       - '-c'
       - |
         wget https://releases.hashicorp.com/packer/${_PACKER_VERSION}/packer_${_PACKER_VERSION}_linux_amd64.zip
-        unzip packer_${_PACKER_VERSION}_linux_amd64.zip
 
   - name: 'gcr.io/cloud-builders/docker'
     args: [
