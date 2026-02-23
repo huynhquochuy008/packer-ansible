@@ -25,7 +25,6 @@ substitutions:
   _PACKER_VERSION_SHA256SUM: 2fd1149c5c6c7604ced64d7b56638af05f6b7ed3f6835182bc913ddaba1f16b8
 
 images:
-  - '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/cloudrun-images/packer:latest'
   - '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/cloudrun-images/packer:${_PACKER_VERSION}'
 options:
   logging: CLOUD_LOGGING_ONLY
