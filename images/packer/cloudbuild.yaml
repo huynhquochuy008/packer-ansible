@@ -11,3 +11,5 @@ substitutions:
 images:
   - '${_REPOSITOY}/packer:latest'
   - '${_REPOSITOY}/packer:${_PACKER_VERSION}'
+options:
+  logging: CLOUD_LOGGING_ONLY
