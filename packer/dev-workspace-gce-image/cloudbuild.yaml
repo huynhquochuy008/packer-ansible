@@ -9,11 +9,14 @@ steps:
   - init
   - -var-file=variables.pkrvars.hcl
   - build.pkr.hcl
+  dir: packer/dev-workspace-gce-image
+
 - name: 'us-central1-docker.pkg.dev/project-e9789cd8-19b6-4ec2-b33/cloudrun-images/packer:1.15.0'
   args:
   - build
   - -var-file=variables.pkrvars.hcl
   - build.pkr.hcl
+  dir: packer/dev-workspace-gce-image
 
 tags: ['cloud-builders']
 
