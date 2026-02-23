@@ -1,0 +1,13 @@
+steps:
+  - name: 'gcr.io/cloud-builders/wget'
+    args: ["https://releases.hashicorp.com/packer/${_PACKER_VERSION}/packer_${_PACKER_VERSION}_linux_amd64.zip"]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', '$_REPOSITOY/packer:${_PACKER_VERSION}','.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '$_REPOSITOY/packer:${_PACKER_VERSION}']
+substitutions:
+  _PACKER_VERSION: 1.15.0
+  _REPOSITOY: '$LOCATION-docker.pkg.dev/$PROJECT_ID/cloudrun-images'
+images:
+  - '${_REPOSITOY}/packer:latest'
+  - '${_REPOSITOY}/packer:${_PACKER_VERSION}'
