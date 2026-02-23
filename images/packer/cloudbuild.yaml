@@ -12,6 +12,8 @@ steps:
       'build',
       '-t',
       '${_REPOSITOY}/packer:${_PACKER_VERSION}',
+      '--build-arg', 'PACKER_VERSION=${_PACKER_VERSION}',
+      '--build-arg', 'PACKER_VERSION_SHA256SUM=${_PACKER_VERSION_SHA256SUM}',
       './images/packer'
     ]
 
@@ -20,6 +22,7 @@ steps:
 
 substitutions:
   _PACKER_VERSION: 1.15.0
+  _PACKER_VERSION_SHA256SUM: 2fd1149c5c6c7604ced64d7b56638af05f6b7ed3f6835182bc913ddaba1f16b8
   _REPOSITOY: '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/cloudrun-images'
 
 images:
